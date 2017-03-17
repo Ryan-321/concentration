@@ -1,4 +1,4 @@
-#main_wrapper {
+.main_wrapper {
   display: flex;
   flex-direction: row;
   justify-content: center;

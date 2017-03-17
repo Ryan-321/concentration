@@ -1,3 +1,32 @@
 div {
   border: 1px solid black;
 }
+
+.piece_container {
+  position: relative;
+  z-index: 99;
+  cursor: pointer;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-perspective-origin: 50% 0%;
+          perspective-origin: 50% 0%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+
+.piece_front,
+.piece_back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.flip {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+}

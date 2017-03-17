@@ -5,9 +5,9 @@ export default class Gamepiece extends Component {
   render () {
 
     return (
-      <main>
-        <Gamepiece />
-      </main>
+      <div>
+        
+      </div>
     )
   }
 }

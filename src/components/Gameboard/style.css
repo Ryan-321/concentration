@@ -1,0 +1,11 @@
+main {
+  flex: 75%;
+  height: 500px;
+  margin-left: 1em;
+  border: 1px solid black;
+}
+
+#gamepiece_wrapper {
+  display: -ms-grid;
+  display: grid;
+}

@@ -10,8 +10,10 @@ class App extends Component {
     return (
       <div>
         <Header />
-        <Sidebar />
-        <Gameboard />
+        <div id="main_wrapper">
+          <Sidebar />
+          <Gameboard />
+        </div>
       </div>
     );
   }

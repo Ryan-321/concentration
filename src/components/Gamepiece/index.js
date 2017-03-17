@@ -6,7 +6,7 @@ export default class Gamepiece extends Component {
 
     return (
       <div>
-        
+        Gamepiece
       </div>
     )
   }

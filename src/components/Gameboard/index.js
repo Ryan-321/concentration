@@ -7,9 +7,26 @@ export default class Gameboard extends Component {
   render () {
     return (
       <main>
-        <div id="gamepiece_wrapper">
-          <Gamepiece />
-        </div>
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
+        <Gamepiece />
       </main>
     )
   }

@@ -14,6 +14,10 @@ div {
           transform-style: preserve-3d;
 }
 
+.piece_container:hover {
+  box-shadow: 0 0 5px black;
+}
+
 
 .piece_front,
 .piece_back {

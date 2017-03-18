@@ -2,20 +2,24 @@ import React, { Component } from 'react';
 import './style.css';
 
 import Gamepiece from '../Gamepiece';
-import image from '../utils/imageHelper';
+import imageHelper from '../../utils/imageHelper';
 
 export default class Gameboard extends Component {
   constructor () {
     super ()
     this.state = {
-      config_array: image.set_array(20)
+      config_array: imageHelper.setArray(20)
     }
   }
-
   render () {
     return (
       <main>
-        <Gamepiece dataId={} />
+        {this.state.config_array
+          .map((num, index) => {
+            return (
+              <Gamepiece dataId={num} key={index}/>
+            )
+          })}
       </main>
     )
   }

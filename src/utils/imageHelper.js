@@ -1,18 +1,21 @@
+const checkNum = (x, array) => {
+  let count = 0;
+  array.forEach((i) => {
+    if(i===x) {count += 1}
+  });
+  var boo = (count === 2) ? false : true
+  return boo
+}
+
 const imageHelper = {
   setArray (num) {
-    array = [];
+    var array = [];
     while (array.length < num) {
-      x = Math.floor((Math.random()*10)+1);
-      var count = 0;
-      array.forEach(function(i) {
-        if (i === x) {count += 1}
-      });
-      if (count === 2) {
-        continue
-      } else {
-        array.push(x);
-      }
+      var x = Math.floor((Math.random()*10)+1);
+      if (checkNum(x,array)) {array.push(x)}
     }
     return array
   }
 }
+
+export default imageHelper;

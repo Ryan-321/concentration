@@ -17,7 +17,7 @@ export default class Gameboard extends Component {
         {this.state.config_array
           .map((num, index) => {
             return (
-              <Gamepiece dataId={num} key={index}/>
+              <Gamepiece id={num} key={index} />
             )
           })}
       </main>

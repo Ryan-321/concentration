@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 [data-id="1"] {
     background-image: url("./images/JQuery_logo_text.svg");
     -webkit-transform: rotateX(-180deg);

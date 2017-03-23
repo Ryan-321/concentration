@@ -5,8 +5,8 @@ div {
 .piece_container {
   position: relative;
   cursor: pointer;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
   -webkit-perspective-origin: 50% 0%;
           perspective-origin: 50% 0%;
   -webkit-transform-style: preserve-3d;

@@ -9,28 +9,66 @@ export default class Gameboard extends Component {
     super ()
     this.state = {
       config_array: imageHelper.setArray(20),
-      class: 
+      clickTracker: 0,
+      indexTracker: []
+
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick () {
-    console.log(this)
-
+  comparePieces (currentArray, index) {
+    console.log("I made it here")
+    let prevIndex = this.state.indexTracker[this.state.indexTracker.length - 1];
+    if (currentArray[index].num === currentArray[prevIndex].num) {
+      this.state.indexTracker.push(index);
+      return
+    }
+    else {
+      currentArray[index].flip = false;
+      currentArray[prevIndex].flip = false;
+      this.state.indexTracker.push(index);
+      this.setState({config_array: currentArray})
+    }
   }
 
+  alreadyFlipped (index) {
+    if (this.state.config_array[index].flip === true) {
+      return true
+    }
+    return false
+  }
+
+  handleClick (index) {
+    if (this.alreadyFlipped(index)) {return}
+    let waitPromise = new Promise((res,rej) => {
+      setTimeout(res, 400)
+    })
+    this.state.clickTracker += 1;
+    let currentArray = this.state.config_array;
+    currentArray[index].flip = true;
+    this.setState({config_array: currentArray})  // Causes a rerender
+    if (this.state.clickTracker === 2) {
+      this.setState({clickTracker: 0});
+      waitPromise.then(() => {this.comparePieces(currentArray, index)})
+    } else if (this.state.clickTracker === 1) {
+      this.state.indexTracker.push(index);
+      console.log("indexTracker: " + this.state.indexTracker);
+    }
+  }
 
   render () {
+    console.log("rendered")
     return (
       <main>
         {this.state.config_array
-          .map((num, index) => {
+          .map((square, index) => {
             return (
               <Gamepiece
-                id={num}
+                id={square.num}
+                rotate={square.flip}
                 key={index}
-                value={index}
-                rotate={this.handleClick}
+                index={index}
+                check={this.handleClick}
               />
             )
           })}

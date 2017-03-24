@@ -5,13 +5,19 @@ import classNames from 'classnames';
 
 const Gamepiece = (props) => {
   const piece = classNames(
-    'piece_container',
+    'cube',
     {flip: props.rotate}
   );
   return (
-    <div className={piece} onClick={() => props.check(props.index)}>
-      <div className='piece_front'></div>
-      <div className='piece_back' data-id={props.id}></div>
+    <div className='wrapper'>
+      <div className={piece} onClick={() => props.check(props.index)}>
+        <div className='front'></div>
+        <div className='back' data-id={props.id}></div>
+        <div className='top'></div>
+        <div className='bottom'></div>
+        <div className='left'></div>
+        <div className='right'></div>
+      </div>
     </div>
   )
 }

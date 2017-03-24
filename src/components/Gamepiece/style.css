@@ -1,44 +1,76 @@
-div {
-  border: 1px solid black;
+
+.wrapper {
+  width: 100px;
+  height: 100px;
+  perspective: 800px;
+  -webkit-perspective: 50% 100px;
+  -moz-perspective: 50% 100px;
+  -ms-perspective: 50% 100px;
+  perspective: 50% 100px;
 }
 
-.piece_container {
+.cube {
   position: relative;
+  width: 100px;
   cursor: pointer;
   -webkit-transition: all .4s ease-in-out;
   transition: all .4s ease-in-out;
-  -webkit-perspective-origin: 50% 0%;
-          perspective-origin: 50% 0%;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
 }
 
+.cube div {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
+}
 
+.back {
+  background-color: none;
+  background-size: 3em;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  /*-webkit-transform: rotateX( -180deg);
+  transform: rotateX( -180deg);*/
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.right {
+  transform: rotateY(-270deg) translateX(100px);
+  transform-origin: top right;
+}
+
+.left {
+  transform: rotateY(270deg) translateX(-100px);
+  transform-origin: center left;
+}
+
+.top{
+  transform: rotateX(-90deg) translateY(-100px);
+  transform-origin: top center;
+}
+
+.bottom {
+  transform: rotateX(90deg) translateY(100px);
+  transform-origin: bottom center;
+}
+
+.front {
+  transform: translateZ(100px);
+}
 
 .piece_container:hover {
   box-shadow: 0 0 5px black;
 }
 
-.piece_front,
-.piece_back {
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-
-.piece_back {
-  background-size: 3em;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  -webkit-transform: rotateX( -180deg);
-  /* Upends backPiece, so when flips back over, its rightside up */
-  transform: rotateX( -180deg);
+.front, .top, .bottom, .right, .left {
+    background: rgba(70,130,180,0.3);
 }
 
 .flip {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
 }

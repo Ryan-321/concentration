@@ -2,11 +2,10 @@ main {
   padding: 1em 2em;
   margin: 1em auto;
   height: 100%;
-  background-color: rgba(91,103,114,0.9);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 2em;
+  grid-row-gap: 2em;
 }

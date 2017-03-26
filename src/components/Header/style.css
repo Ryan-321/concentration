@@ -1,6 +1,9 @@
 header {
   margin-bottom: 1em;
   border-bottom: 1px solid lightslategray;
+  background-color: slategray;
+  z-index: 100;
+  box-shadow: 0 0 5px darkslategrey;
 }
 
 h1 {

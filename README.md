@@ -2,6 +2,7 @@
 
   Memory game.  Flip the boxes and try to match like pictures.
   https://warm-dawn-43837.herokuapp.com/
+  Must have latest updates for Chrome or Firefox browser installed.
 
 ##  Tech Used
 

@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import './style.css';
 
 import Header from '../Header';
-import Sidebar from '../Sidebar';
 import Gameboard from '../Gameboard';
 
-class App extends Component {
+export default class App extends Component {
   render() {
     return (
       <div>
@@ -15,5 +14,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

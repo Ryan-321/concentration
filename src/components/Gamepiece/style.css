@@ -63,19 +63,37 @@
           transform: rotateX(-180deg);
 }
 
-.front  { -webkit-transform: rotateY(   0deg ) translateZ(  50px ); transform: rotateY(   0deg ) translateZ(  50px ); }
-.back   { -webkit-transform: rotateX( 180deg ) translateZ(  50px ); transform: rotateX( 180deg ) translateZ(  50px ); }
-.right  { -webkit-transform: rotateY(  90deg ) translateZ( 100px ); transform: rotateY(  90deg ) translateZ( 100px ); }
-.left   { -webkit-transform: rotateY( -90deg ) translateZ( 100px ); transform: rotateY( -90deg ) translateZ( 100px ); }
-.top    { -webkit-transform: rotateX(  90deg ) translateZ( 100px ); transform: rotateX(  90deg ) translateZ( 100px ); }
-.bottom { -webkit-transform: rotateX( -90deg ) translateZ( 100px ); transform: rotateX( -90deg ) translateZ( 100px ); }
+.front {
+  -webkit-transform: rotateY(0deg) translateZ(50px);
+  transform: rotateY(0deg) translateZ(50px);
+}
+.back {
+  -webkit-transform: rotateX(180deg) translateZ(50px);
+  transform: rotateX(180deg) translateZ(50px);
+}
+.right{
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+  transform: rotateY(90deg) translateZ(100px);
+}
+.left {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+  transform: rotateY(-90deg) translateZ(100px);
+}
+.top{
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+  transform: rotateX(90deg) translateZ(100px);
+}
+.bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+  transform: rotateX(-90deg) translateZ(100px);
+}
 
 .piece_container:hover {
   box-shadow: 0 0 5px black;
 }
 
 .front, .top, .bottom, .right, .left, .back {
-    background-color: rgba(70,130,180,0.3);
+background-color: rgba(70,130,180,0.3);
 }
 
 /* FLIP */
@@ -83,5 +101,39 @@
 .flip {
   margin: 0 auto;
   -webkit-transform: rotateX(-175deg);
-          transform: rotateX(-175deg)
+          transform: rotateX(-175deg);
+}
+
+.winner {
+  -webkit-animation-name: spinner;
+          animation-name: spinner;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-duration: 6s;
+          animation-duration: 6s;
+
+}
+
+@-webkit-keyframes spinner {
+  from {
+    -webkit-transform: rotate3d(0,0,0,0deg);
+            transform: rotate3d(0,0,0,0deg);
+  }
+  to {
+    -webkit-transform: rotate3d(1,1,1,360deg);
+            transform: rotate3d(1,1,1,360deg);
+  }
+}
+
+@keyframes spinner {
+  from {
+    -webkit-transform: rotate3d(0,0,0,0deg);
+            transform: rotate3d(0,0,0,0deg);
+  }
+  to {
+    -webkit-transform: rotate3d(1,1,1,360deg);
+            transform: rotate3d(1,1,1,360deg);
+  }
 }

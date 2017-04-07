@@ -10,8 +10,8 @@ export default class Gameboard extends Component {
     this.state = {
       config_array: imageHelper.setArray(20),
       clickTracker: 0,
-      indexTracker: []
-
+      indexTracker: [],
+      winner: false
     }
     this.handleClick = this.handleClick.bind(this);
   }
@@ -20,6 +20,7 @@ export default class Gameboard extends Component {
     let prevIndex = this.state.indexTracker[this.state.indexTracker.length - 1];
     if (currentArray[index].num === currentArray[prevIndex].num) {
       this.state.indexTracker.push(index);
+      this.checkWinner(currentArray);
       return
     }
     else {
@@ -53,6 +54,13 @@ export default class Gameboard extends Component {
     }
   }
 
+  checkWinner (currentArray) {
+    let check = currentArray.every((square) => {
+                  return square.flip === true
+                })
+    if (check) {this.setState({winner: true})};
+  }
+
   render () {
     console.log("rendered")
     return (
@@ -66,9 +74,11 @@ export default class Gameboard extends Component {
                 key={index}
                 index={index}
                 check={this.handleClick}
+                win={this.state.winner}
               />
             )
-          })}
+          })
+        }
       </main>
     )
   }

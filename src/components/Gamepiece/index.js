@@ -6,7 +6,8 @@ import classNames from 'classnames';
 const Gamepiece = (props) => {
   const piece = classNames(
     'cube',
-    {flip: props.rotate}
+    {flip: props.rotate},
+    {winner: props.win}
   );
   return (
     <div className='wrapper'>

@@ -39,12 +39,12 @@ export default class Gameboard extends Component {
   }
 
   handleClick (index) {
-    if (this.alreadyFlipped(index)) {return}  // if flipped do nothing
+    if (this.alreadyFlipped(index)) {return}
     this.state.clickTracker += 1;
-    let waitPromise = new Promise((res,rej) => {setTimeout(res, 400)})  // gives transform time
-    let currentArray = this.state.config_array;  // make a copy
-    currentArray[index].flip = true;  // modify copy
-    this.setState({config_array: currentArray})  // rerender copy
+    let waitPromise = new Promise((res,rej) => {setTimeout(res, 400)})
+    let currentArray = this.state.config_array;
+    currentArray[index].flip = true;
+    this.setState({config_array: currentArray})
     if (this.state.clickTracker === 2) {
       this.setState({clickTracker: 0});
       waitPromise.then(() => {this.comparePieces(currentArray, index)})

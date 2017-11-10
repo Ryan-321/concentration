@@ -12,12 +12,12 @@ const Gamepiece = (props) => {
   return (
     <div className='wrapper'>
       <div className={piece} onClick={() => props.check(props.index)}>
-        <div className='front'></div>
-        <div className='back' data-id={props.id}></div>
-        <div className='top'></div>
-        <div className='bottom'></div>
-        <div className='left'></div>
-        <div className='right'></div>
+        <div className='front' />
+        <div className='back' data-id={props.id} />
+        <div className='top' />
+        <div className='bottom' />
+        <div className='left' />
+        <div className='right' />
       </div>
     </div>
   )

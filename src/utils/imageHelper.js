@@ -3,15 +3,15 @@ const checkNum = (x, array) => {
   array.forEach((i) => {
     if(i.num===x) {count += 1}
   });
-  var boo = (count === 2) ? false : true
+  let boo = (count === 2)
   return boo
 }
 
 const imageHelper = {
   setArray (num) {
-    var array = [];
+    let array = [];
     while (array.length < num) {
-      var x = Math.floor((Math.random()*10)+1);
+      let x = Math.floor((Math.random()*10)+1);
       if (checkNum(x,array)) {array.push({num: x, flip: false})}
     }
     return array

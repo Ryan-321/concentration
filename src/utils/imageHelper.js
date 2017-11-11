@@ -3,8 +3,7 @@ const checkNum = (x, array) => {
   array.forEach((i) => {
     if(i.num===x) {count += 1}
   });
-  let boo = (count === 2)
-  return boo
+  return count !== 2
 }
 
 const imageHelper = {
@@ -12,7 +11,11 @@ const imageHelper = {
     let array = [];
     while (array.length < num) {
       let x = Math.floor((Math.random()*10)+1);
-      if (checkNum(x,array)) {array.push({num: x, flip: false})}
+      if (checkNum(x,array)) {
+          array.push({
+          num: x,
+          flip: false
+        })}
     }
     return array
   }

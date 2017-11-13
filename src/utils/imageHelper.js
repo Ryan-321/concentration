@@ -1,19 +1,16 @@
-const checkNum = (x, array) => {
-  let count = 0;
-  array.forEach((i) => {
-    if(i.num===x) {count += 1}
-  });
-  return count !== 2
+const checkNum = (num, array) => {
+  const filteredArray = array.filter((i) => i.num===num);
+  return filteredArray.length < 2
 }
 
 const imageHelper = {
   setArray (num) {
     let array = [];
     while (array.length < num) {
-      let x = Math.floor((Math.random()*10)+1);
-      if (checkNum(x,array)) {
+      let randomNum = Math.floor((Math.random()*10)+1);
+      if (checkNum(randomNum ,array)) {
           array.push({
-          num: x,
+          num: randomNum,
           flip: false
         })}
     }
